@@ -117,7 +117,7 @@ return {
           -- `:h events` that cause the diagnostics to update. Set to:
           -- { "BufWritePost", "InsertLeave", "TextChanged" } for less performant
           -- but more instant diagnostic updates
-          diagnostic_update_events = { "BufWritePost" },
+          diagnostic_update_events = { "BufWritePost", "InsertLeave", "TextChanged" },
         },
         buffers = {
           -- if set to true, the filetype of the otterbuffers will be set.
@@ -350,26 +350,26 @@ return {
       })
     end,
   },
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function()
-      require("lsp_signature").setup({
-        bind = true,
-        floating_window = false,
-        hint_enable = true,
-        hint_prefix = " ",
-        hi_parameter = "LspSignatureActiveParameter",
-        -- toggle_key = '<C-s>',
-        handler_opts = {
-          border = "rounded",
-        },
-        always_trigger = true,
-        extra_trigger_chars = { "(", "," },
-        timer_interval = 100,
-      })
-    end,
-  },
+  -- {
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "BufRead",
+  --   config = function()
+  --     require("lsp_signature").setup({
+  --       bind = true,
+  --       floating_window = false,
+  --       hint_enable = true,
+  --       hint_prefix = " ",
+  --       hi_parameter = "LspSignatureActiveParameter",
+  --       -- toggle_key = '<C-s>',
+  --       handler_opts = {
+  --         border = "rounded",
+  --       },
+  --       always_trigger = true,
+  --       extra_trigger_chars = { "(", "," },
+  --       timer_interval = 100,
+  --     })
+  --   end,
+  -- },
   {
     "glacambre/firenvim",
     run = function()
