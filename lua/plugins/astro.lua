@@ -278,6 +278,8 @@ return {
     },
     config = function()
       require("render-markdown").setup({
+        enabled = true,
+        preset = "obsidian",
         win_options = {
           conceallevel = {
             -- Used when not being rendered, get user setting
