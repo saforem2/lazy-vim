@@ -7,3 +7,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank({ higroup = "IncSearch", timeout = 250 })
   end,
 })
+
+-- vim.api.nvim_create_autocmd(On, opts)
+--       vim.cmd[[
+--         autogroup markdownmappings
+--           autocmd!
+--           autocmd FileType markdown nmap <buffer> ]v <Plug>Markdown_MoveToNextHeader
+--           autocmd FileType markdown nmap <buffer> [v <Plug>Markdown_MoveToPreviousHeader
+--       ]]

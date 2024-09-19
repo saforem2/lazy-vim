@@ -20,8 +20,11 @@ vim.keymap.set(
   "require('osc52').copy_operator()",
   { desc = "copy visual selection to system clipboard" }
 )
-vim.keymap.set({ "n" }, "[[", "<Plug>(Markdown_MoveToPreviousHeader)", { desc = "Set cursor to previous heading" })
-vim.keymap.set({ "n" }, "]]", "<Plug>(Markdown_MoveToNextHeader)", { desc = "Set cursor to next heading" })
+
+-- vim.keymap.set({ "n" }, "[v", [[<Plug>Markdown_MoveToNextHeader<CR>]], { desc = "Set cursor to next heading" })
+-- vim.keymap.set({ "n" }, "]v", [[:<Plug>Markdown_MoveToPreviousHeader<CR>]], { desc = "Set cursor to previous heading" })
+-- vim.keymap.set({ "n" }, "[v", "<Plug>(Markdown_MoveToPreviousHeader)<cr>", { desc = "Set cursor to previous heading" })
+-- vim.keymap.set({ "n" }, "]v", "<Plug>(Markdown_MoveToNextHeader)<cr>", { desc = "Set cursor to next heading" })
 vim.keymap.set({ "n" }, "<leader>\\", "<cmd>QuartoPreview<cr>", { desc = "Quarto Preview" })
 vim.keymap.set({ "n" }, "0", "^", { desc = "Beginning of line" })
 vim.keymap.set({ "n" }, "X", [[:keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>]], { desc = "Split line" })

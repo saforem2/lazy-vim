@@ -99,6 +99,7 @@ return {
               ["]m"] = "@function.outer",
               ["]c"] = "@codechunk.inner",
               ["]]"] = "@class.inner",
+              ["]h"] = "@header",
             },
             goto_next_end = {
               ["]M"] = "@function.outer",
@@ -108,6 +109,7 @@ return {
               ["[m"] = "@function.outer",
               ["[c"] = "@codechunk.inner",
               ["[["] = "@class.inner",
+              ["[h"] = "@header",
             },
             goto_previous_end = {
               ["[M"] = "@function.outer",
