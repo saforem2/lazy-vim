@@ -1,4 +1,5 @@
 return {
+  { "Bekaboo/deadcolumn.nvim", lazy = false, enabled = true },
   { "saforem2/glitz", lazy = false, enabled = true },
   { "p00f/nvim-ts-rainbow" },
   { "NTBBloodbath/doom-one.nvim" },
@@ -136,7 +137,6 @@ return {
   { "dhruvasagar/vim-table-mode" },
   { "jghauser/mkdir.nvim" },
   { "hkupty/iron.nvim" },
-  { "Bekaboo/deadcolumn.nvim" },
   { "rktjmp/lush.nvim" },
   { "bfredl/nvim-ipy" },
   { "ggandor/lightspeed.nvim", event = "BufRead" },
@@ -273,9 +273,10 @@ return {
         win_options = {
           conceallevel = {
             -- Used when not being rendered, get user setting
-            default = vim.api.nvim_get_option_value("conceallevel", {}),
+            default = 0,
+            -- default = vim.api.nvim_get_option_value("conceallevel", { 2 }),
             -- Used when being rendered, concealed text is completely hidden
-            rendered = 0,
+            rendered = 2,
           },
         },
         file_types = {

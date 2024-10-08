@@ -8,6 +8,8 @@
 vim.g.vim_markdown_auto_insert_bullets = 0
 vim.g.vim_markdown_new_list_item_indent = 0
 vim.g.vim_markdown_strikethrough = 1
+vim.g.tex_superscripts= "[0-9a-zA-W.,:;+-<>/()=]"
+vim.g.tex_subscripts= "[0-9aehijklmnoprstuvx,+-/().]"
 vim.g.vim_markdown_frontmatter = 1
 vim.g.vim_markdown_math = 1
 vim.g.vim_markdown_fenced_languages = { "csharp=cs", "python=py" }
@@ -43,6 +45,7 @@ vim.g.trouble_lualine = true
 local opt = vim.opt
 
 opt.autowrite = true -- Enable auto write
+opt.colorcolumn = { "80" }
 -- only set clipboard if not in ssh, to make sure the OSC 52
 -- integration works automatically. Requires Neovim >= 0.10.0
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard

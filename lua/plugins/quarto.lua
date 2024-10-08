@@ -1,5 +1,13 @@
 return {
   -- { "vim-pandoc/vim-pandoc-syntax" },
+    --
+    {
+        "KeitaNakamura/tex-conceal.vim",
+        lazy = false,
+        enabled = true,
+        -- config = function()
+        -- end,
+    },
 
   { -- requires plugins in lua/plugins/treesitter.lua and lua/plugins/lsp.lua
     -- for complete functionality (language features)
