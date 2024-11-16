@@ -88,7 +88,7 @@ return {
   -- { "bluz71/vim-nightfly-guicolors" },
   -- { "rafamadriz/neon" },
   -- { "sainnhe/sonokai" },
-  -- { "lukas-reinke/indent-blankline.nvim", enabled = false },
+  { "lukas-reinke/indent-blankline.nvim", enabled = false },
   -- { "kosayoda/nvim-lightbulb" },
   -- { "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline" },
   -- { "chaoren/vim-wordmotion" },

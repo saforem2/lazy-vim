@@ -12,16 +12,17 @@ vim.g.tex_superscripts= "[0-9a-zA-W.,:;+-<>/()=]"
 vim.g.tex_subscripts= "[0-9aehijklmnoprstuvx,+-/().]"
 vim.g.vim_markdown_frontmatter = 1
 vim.g.vim_markdown_math = 1
-vim.g.vim_markdown_fenced_languages = { "csharp=cs", "python=py" }
+-- vim.g.vim_markdown_fenced_languages = { "csharp=cs", "python=py" }
 vim.g.vim_markdown_folding_level = 2
 -- LazyVim auto format
 vim.g.autoformat = false
 
 -- Options for the LazyVim statuscolumn
-vim.g.lazyvim_statuscolumn = {
-  folds_open = true, -- show fold sign when fold is open
-  folds_githl = true, -- highlight fold sign with git sign color
-}
+-- vim.g.lazyvim_statuscolumn = {
+-- require("snacks").statuscolumn = {
+--   folds_open = true, -- show fold sign when fold is open
+--   folds_githl = true, -- highlight fold sign with git sign color
+-- }
 
 -- Optionally setup the terminal to use
 -- This sets `vim.o.shell` and does some additional configuration for:
@@ -93,7 +94,7 @@ opt.spelloptions:append("noplainbuffer")
 opt.splitbelow = true -- Put new windows below current
 opt.splitkeep = "screen"
 opt.splitright = true -- Put new windows right of current
-opt.statuscolumn = [[%!v:lua.require'lazyvim.util'.ui.statuscolumn()]]
+-- opt.statuscolumn = [[%!v:lua.require'lazyvim.util'.ui.statuscolumn()]]
 opt.tabstop = 4 -- Number of spaces tabs count for
 opt.termguicolors = true -- True color support
 opt.timeoutlen = vim.g.vscode and 1000 or 300 -- Lower than default (1000) to quickly trigger which-key
