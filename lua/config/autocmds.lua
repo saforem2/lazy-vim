@@ -8,6 +8,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*",
+  callback = function()
+    vim.diagnostic.config({
+      virtual_text = false,
+    })
+  end,
+})
+
 -- vim.api.nvim_create_autocmd(On, opts)
 --       vim.cmd[[
 --         autogroup markdownmappings
