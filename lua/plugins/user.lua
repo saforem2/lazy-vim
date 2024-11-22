@@ -1,4 +1,18 @@
 return {
+  { "lyokha/vim-publish-helper", lazy = false, enabled = true },
+  {
+    "romgrk/kirby.nvim",
+    enabled = true,
+    dependencies = {
+      { "romgrk/fzy-lua-native", build = "make all" },
+      { "romgrk/kui.nvim" },
+      { "nvim-tree/nvim-web-devicons" },
+      { "nvim-lua/plenary.nvim" },
+    },
+  },
+  { "ggml-org/llama.vim", lazy = false, enabled = true },
+  { "dasupradyumna/midnight.nvim", lazy = false, priority = 1000 },
+  { "vim-pandoc/vim-pandoc-syntax", lazy = false, filetypes = { "markdown", "vimwiki", "quarto" } },
   { "Bekaboo/deadcolumn.nvim", lazy = false, enabled = true },
   { "saforem2/glitz", lazy = false, enabled = true },
   { "p00f/nvim-ts-rainbow" },
@@ -249,7 +263,7 @@ return {
       {
         "tadmccorkle/markdown.nvim",
         event = "VeryLazy",
-        ft = { "markdown", "quarto" },
+        ft = { "markdown", "quarto", "qmd" },
         opts = {
           mappings = {
             inline_surround_toggle = "gs", -- (string|boolean) toggle inline style
@@ -547,9 +561,10 @@ return {
     config = function()
       --   require("codeium").setup({})
       vim.g.codeium_disable_bindings = 1
-      vim.keymap.set("i", "<C-g>", function()
-        return vim.fn["codeium#Accept"]()
-      end, { expr = true })
+      nvim_set_keymap("i", "<C-g>", "v:lua.codeium#Accept()", { expr = true })
+      -- vim.keymap.set("i", "<C-g>", function()
+      -- return vim.fn["codeium#Accept"]()
+      -- end, { expr = true })
       vim.keymap.set("i", "<c-;>", function()
         return vim.fn["codeium#CycleCompletions"](1)
       end, { expr = true })
@@ -596,7 +611,7 @@ return {
         css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
         css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
         -- Available modes for `mode`: foreground, background,  virtualtext
-        mode = "virtualtext", -- Set the display mode.
+        mode = "both", -- Set the display mode.
         -- Available methods are false / true / "normal" / "lsp" / "both"
         -- True is same as normal
         tailwind = true, -- Enable tailwind colors
@@ -1179,35 +1194,35 @@ return {
   },
 
   -- color html colors
-  {
-    "NvChad/nvim-colorizer.lua",
-    enabled = true,
-    opts = {
-      filetypes = { "*" },
-      user_default_options = {
-        RGB = true, -- #RGB hex codes
-        RRGGBB = true, -- #RRGGBB hex codes
-        names = true, -- "Name" codes like Blue or blue
-        RRGGBBAA = true, -- #RRGGBBAA hex codes
-        AARRGGBB = false, -- 0xAARRGGBB hex codes
-        rgb_fn = true, -- CSS rgb() and rgba() functions
-        hsl_fn = true, -- CSS hsl() and hsla() functions
-        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-        -- Available modes for `mode`: foreground, background,  virtualtext
-        mode = "virtualtext", -- Set the display mode.
-        -- Available methods are false / true / "normal" / "lsp" / "both"
-        -- True is same as normal
-        tailwind = true, -- Enable tailwind colors
-        -- parsers can contain values used in |user_default_options|
-        sass = { enable = true, parsers = { "css" } }, -- Enable sass colors
-        virtualtext = "■",
-        -- update color values even if buffer is not focused
-        -- example use: cmp_menu, cmp_docs
-        always_update = false,
-        -- all the sub-options of filetypes apply to buftypes
-      },
-      buftypes = {},
-    },
-  },
+  -- {
+  --   "NvChad/nvim-colorizer.lua",
+  --   enabled = true,
+  --   opts = {
+  --     filetypes = { "*" },
+  --     user_default_options = {
+  --       RGB = true, -- #RGB hex codes
+  --       RRGGBB = true, -- #RRGGBB hex codes
+  --       names = true, -- "Name" codes like Blue or blue
+  --       RRGGBBAA = true, -- #RRGGBBAA hex codes
+  --       AARRGGBB = false, -- 0xAARRGGBB hex codes
+  --       rgb_fn = true, -- CSS rgb() and rgba() functions
+  --       hsl_fn = true, -- CSS hsl() and hsla() functions
+  --       css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+  --       css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+  --       -- Available modes for `mode`: foreground, background,  virtualtext
+  --       mode = "virtualtext", -- Set the display mode.
+  --       -- Available methods are false / true / "normal" / "lsp" / "both"
+  --       -- True is same as normal
+  --       tailwind = true, -- Enable tailwind colors
+  --       -- parsers can contain values used in |user_default_options|
+  --       -- sass = { enable = true, parsers = { "css" } }, -- Enable sass colors
+  --       virtualtext = "■",
+  --       -- update color values even if buffer is not focused
+  --       -- example use: cmp_menu, cmp_docs
+  --       always_update = false,
+  --       -- all the sub-options of filetypes apply to buftypes
+  --     },
+  --     buftypes = {},
+  --   },
+  -- },
 }
