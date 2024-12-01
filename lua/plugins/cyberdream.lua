@@ -47,7 +47,7 @@ return {
               ["@keyword.conditional"] = { fg = "#FF3BD3" },
               ["@variable.member"] = { fg = "#FA99CD" },
               ["@Identifier"] = { fg = "#65d8ee", bold = true },
-              ["RenderMarkdownCode"] = { fg = "#D3FF3B", bg="#282828" },
+              ["RenderMarkdownCodeInline"] = { fg = "#D3FF3B", bg="#282828" },
 
               -- ["@property"] = { fg = colors.blue, bold = true },
               --         -- ["@property"] = { fg = colors.magenta, bold = true },
