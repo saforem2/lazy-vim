@@ -51,7 +51,7 @@ return {
       })
 
       -- setup must be called before loading
-      vim.cmd("colorscheme github_dark")
+      -- vim.cmd("colorscheme github_dark")
     end,
   },
 
@@ -196,27 +196,27 @@ return {
   --   end,
   -- },
   { "lyokha/vim-publish-helper", lazy = false, enabled = true },
-  {
-    "romgrk/kirby.nvim",
-    enabled = true,
-    dependencies = {
-      { "romgrk/fzy-lua-native", build = "make all" },
-      { "romgrk/kui.nvim" },
-      { "nvim-tree/nvim-web-devicons" },
-      { "nvim-lua/plenary.nvim" },
-    },
-  },
-  { "ggml-org/llama.vim", lazy = false, enabled = true },
-  { "dasupradyumna/midnight.nvim", lazy = false, priority = 1000 },
+  -- {
+  --   "romgrk/kirby.nvim",
+  --   enabled = true,
+  --   dependencies = {
+  --     { "romgrk/fzy-lua-native", build = "make all" },
+  --     { "romgrk/kui.nvim" },
+  --     { "nvim-tree/nvim-web-devicons" },
+  --     { "nvim-lua/plenary.nvim" },
+  --   },
+  -- },
+  -- { "ggml-org/llama.vim", lazy = false, enabled = true },
+  -- { "dasupradyumna/midnight.nvim", lazy = false, priority = 1000 },
   { "vim-pandoc/vim-pandoc-syntax", lazy = false, filetypes = { "markdown", "vimwiki", "quarto" } },
   { "Bekaboo/deadcolumn.nvim", lazy = false, enabled = true },
-  { "saforem2/glitz", lazy = false, enabled = true },
+  -- { "saforem2/glitz", lazy = false, enabled = true },
   { "p00f/nvim-ts-rainbow" },
   { "NTBBloodbath/doom-one.nvim" },
   { "marko-cerovac/material.nvim" },
-  { "sainnhe/sonokai" },
+  -- { "sainnhe/sonokai" },
   { "nyoom-engineering/oxocarbon.nvim" },
-  { "tanvirtin/monokai.nvim" },
+  -- { "tanvirtin/monokai.nvim" },
   { "yonlu/omni.vim", lazy = false },
   { "wakatime/vim-wakatime", lazy = false },
   { "mbbill/undotree" },
