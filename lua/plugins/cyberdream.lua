@@ -36,7 +36,6 @@ return {
             -- Keyword = { fg = "#ffa94d" },
             -- Normal = { fg = "#cccccc" },
             -- Identifier = { fg = "#eeeeee" },
-            Keyword = { fg = "#00CCFF" },
             CursorLine = { bg = "#252525" },
             -- Complete list can be found in `lua/cyberdream/theme.lua`
           },
@@ -45,9 +44,12 @@ return {
           overrides = function(colors) -- NOTE: This function nullifies the `highlights` option
             -- Example:
             return {
+              Keyword = { fg = "#00CCFF" },
               Normal = { bg = "#1c1c1c", fg = "#B3B3B3" },
               Comment = { italic = false, fg = "#5F6972" },
               -- ["@variable"] = { fg = "#cccccc" },
+              ["@keyword.import"] = { fg = "#D3FF3B" },
+              ["@keyword.type"] = { fg = "#E599F7" },
               ["@keyword.conditional"] = { fg = "#FF3BD3" },
               ["@variable.member"] = { fg = "#FA99CD" },
               ["@Identifier"] = { fg = "#65d8ee", bold = true },
